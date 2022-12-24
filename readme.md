@@ -214,13 +214,7 @@ The following is the cartoonization result of a single landscape image of each s
 
 The following is the output of each style of video.  
 Original  
-![Original](./images/Original.gif 'Original')
+![Original](./images/test.gif 'Original')
 
 Hayao  
-![Hayao](./images/Hayao.gif 'Hayao')
-
-Paprika  
-![Paprika](./images/Paprika.gif 'Paprika')
-
-Shinkai  
-![Shinkai](./images/Shinkai.gif 'Shinkai')
+![Hayao](./images/ouput.gif 'Hayao')
