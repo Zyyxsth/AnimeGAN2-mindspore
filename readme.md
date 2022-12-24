@@ -117,7 +117,7 @@ check_points
 
 ### Dataset
 
-最开始, 我们采用了 [official dataset](https://github.com/TachibanaYoshino/AnimeGAN/releases/tag/dataset-1)数据集进行训练, 它提供了各种动漫风格，如隼、新海诚、辣椒粉，并在“train_photo”目录中提供真实世界的图像。数据集的目录结构说明如下： 
+最开始, 我们采用了 [official dataset](https://github.com/TachibanaYoshino/AnimeGAN/releases/tag/dataset-1)数据集进行训练, 它提供了各种动漫风格，如Hayao、Paprika、Shinkai，并在“train_photo”目录中提供真实世界的图像。数据集的目录结构说明如下： 
 
 ```text
 .dataset/
