@@ -1,34 +1,24 @@
 # AnimeGANv2
 
-
-### This is a rewrite by our group for the 2022 Computer Vision Final Assignment of the School of Intelligent Engineering of Sun Yat-sen University。Mindspore's version of AnimeGAN2
-
-### writer---zhangyuying tangshen qumu, enlong huangjing tianyun
-
-
-复现了AnimeGAN2的mindspore版本。
-
-### 原理解释
-
-曲木老师你们搞一下
+Anime is a common artistic form in our daily life. This artistic form is widely used in several fields including advertising, film and children’s education.
+Currently, the production of animation mainly relies on manual implementation. However, manually creating anime is very laborious and involves substantial artistic skills.
+For animation artists, creating high-quality anime works requires careful consideration of lines, textures, colors and shadows, which means that it is difficult and time-consuming to create the works.
+Therefore, the automatic techniques that can automatically transform real-world photos to high-quality animation style images are very valuable and necessary.
+AnimeGANv2 algorithm can rapidly transform real-world photos into high-quality anime images. AnimeGANv2 is a lightweight generative adversarial model with fewer network parameters.
 
 ## Pretrained model
 
 ### AnimeGANv2 Model trained by MindSpore
 
-```text
-check_points  
-└──check_points
-       ├──animeganv2_generator_Hayao.ckpt
-       ├──animeganv2_generator_Paprika.ckpt
-       ├──animeganv2_generator_Shinkai.ckpt
-```
-
+| model                        | style   | ckpt                                                                                      |
+| :--------------------------- | :------ | :---------------------------------------------------------------------------------------- |
+| animeganv2_generator_Hayao   | Hayao   | [ckpt](https://download.mindspore.cn/vision/animeganv2/animeganv2_generator_Hayao.ckpt)   |
+| animeganv2_generator_Paprika | Paprika | [ckpt](https://download.mindspore.cn/vision/animeganv2/animeganv2_generator_Paprika.ckpt) |
+| animeganv2_generator_Shinkai | Shinkai | [ckpt](https://download.mindspore.cn/vision/animeganv2/animeganv2_generator_Shinkai.ckpt) |
 
 ### Vgg19 model
 
-
-预训练的[vgg19]（https://download.mindspore.cn/vision/animeganv2/vgg.ckpt) 模型用于特征提取和损失函数计算。请将此文件放在与此文件相同的目录中。 
+The pre-trained [vgg19](https://download.mindspore.cn/vision/animeganv2/vgg.ckpt) model is used for feature extraction and loss function calculation. Please place this file in the same directory as this file.  
 
 ## Training Parameter description
 
@@ -71,29 +61,29 @@ check_points
     ├──vgg.ckpt
     ├──src
         ├──animeganv2_utils
-            ├──adjust_brightness.py             # 调整输出图像的亮度.
-            ├──edge_smooth.py                   # 平滑动画图像并将其保存在新目录中.
-            └──pre_process.py                   # 常用图像处理功能和工具功能.
+            ├──adjust_brightness.py             # Adjust the brightness of output image.
+            ├──edge_smooth.py                   # Smooth the animation image and save it in a new directory.
+            └──pre_process.py                   # Common image processing functions and tool functions.
         ├──losses
-            ├──color_loss.py                    # 损失函数.
-            ├──gram_loss.py                     # 损失函数.
-            ├──loss.py                          # 生成和辨别损失.
-            ├──utils.py                         # 图像处理工具.
-            └──vgg19.py                         # vgg19 网络.
+            ├──color_loss.py                    # Loss cell.
+            ├──gram_loss.py                     # Loss cell.
+            ├──loss.py                          # Generator loss and discriminator loss.
+            ├──utils.py                         # Image processing functions.
+            └──vgg19.py                         # Build vgg19 network.
         ├──models
-            ├──animegan.py                      # 动漫网络的连接器，损失和优化器.
-            ├──con2d_block.py                   # 卷积模块.
-            ├──discriminator.py                 # D网络.
-            ├──generator.py                     # G网络.
-            ├──instance_norm_2d.py              # 上采样.
-            ├──inverted_residual_block.py       # residual模块.
-            └──upsample.py                      # 上采样.
+            ├──animegan.py                      # The connector of animegan network, loss and optimizer.
+            ├──con2d_block.py                   # Convolution block.
+            ├──discriminator.py                 # Discriminator.
+            ├──generator.py                     # Generator network.
+            ├──instance_norm_2d.py              # Define up-sampling operation.
+            ├──inverted_residual_block.py       # Inverted residual block.
+            └──upsample.py                      # Define up-sampling operation.
         ├──process_datasets
-            ├──animeganv2_dataset.py            # 数据集读取.
-            └──utils.py                         # 图像处理工具.
-        ├──infer.py                             # test.
-        ├──train.py                             # train.
-        └──video2anime.py                       # 将真实世界的视频转换为动漫风格的视频.
+            ├──animeganv2_dataset.py            # Create the AnimeGAN dataset.
+            └──utils.py                         # Image processing functions.
+        ├──infer.py                             # Test the performance in the specified directory.
+        ├──train.py                             # Build and train model.
+        └──video2anime.py                       # Convert real world video into anime style video.
     ├──dataset
         ├──train_photo
         ├──test
@@ -101,11 +91,11 @@ check_points
         ├──Hayao
         ├──Shinkai
         └──Paprika
-    ├──images                                   # 用于保存中间训练结果图像.
+    ├──images                                   # Used to save intermediate training result images.
         ├──Hayao
         ├──Shinkai
         └──Paprika
-    ├──checkpoints                              # 模型参数.
+    ├──checkpoints                              # Used to save training model files.
         ├──Hayao
         ├──Shinkai
         └──Paprika
@@ -113,11 +103,11 @@ check_points
 
 ## Example
 
-在这里，如何使用AnimeGanv2模型将介绍如下。
+Here, how to use AnimeGANv2 model will be introduced as following.
 
 ### Dataset
 
-最开始, 我们采用了 [official dataset](https://github.com/TachibanaYoshino/AnimeGAN/releases/tag/dataset-1)数据集进行训练, 它提供了各种动漫风格，如Hayao、Paprika、Shinkai，并在“train_photo”目录中提供真实世界的图像。数据集的目录结构说明如下： 
+First of all, we recommend using the [official dataset](https://github.com/TachibanaYoshino/AnimeGAN/releases/tag/dataset-1) for training, which provides various anime styles such as Hayao, Shinkai, Paprika, and also provides real world images in ```train_photo``` directory. The directory structure of the dataset is described as follows:  
 
 ```text
 .dataset/
@@ -144,10 +134,10 @@ check_points
 
 ### Edge Smooth
 
-在开始训练模型之前，如果使用自己的动画数据集，则应首先smooth这些图像。
-如果您使用我们提供的官方数据集，则此步骤不是必需的。
+Before you start to train the model, if you use your own animation dataset, you should first smooth these images.
+This step is not necessary if you use the official dataset downloaded above.
 
-输入图像的目录结构:  
+The directory structure of the input image:  
 
 ```text
 your own style
@@ -155,14 +145,14 @@ your own style
    └──style
 ```
 
-然后运行 ```edge_smooth.py``` 脚本, 这些命令的两个参数表示样式目录路径和输出目录路径.  
+Then run the ```edge_smooth.py``` script,the two parameters of these commands represent the style directory path and the output directory path.  
 For example:
 
 ```shell
 python edge_smooth.py --style_path dataset/Sakura/style/ --output_path dataset/Sakura/smooth/
 ```
 
-把处理过的数据集进行下面这样放置:  
+Put the processed directory into the dataset directory:  
 
 ```text
 .dataset/
@@ -174,7 +164,7 @@ python edge_smooth.py --style_path dataset/Sakura/style/ --output_path dataset/S
 
 ### Train Model
 
-等所有数据集准备好了之后, 运行 train.py .
+After you have all the datasets ready, run the train.py to start to train the model.
 
 ```shell
 python train.py --dataset Hayao --batch_size 4 --epochs 40
@@ -188,41 +178,42 @@ output:
 1651it [05:49,  4.74it/s][40/40][1650/1664] Loss_D: 6.3708 Loss_G: 1.8706
 ```
 
-训练开始时，程序会自动创建```images```和```checkpoints```目录，使用前者保存测试结果，后者保存模型文件。可以根据“图像”中的测试结果做出主观判断，为以下模型推断和视频转换步骤选择合适的模型。
+When the training starts, the program automatically created ```images``` and ```checkpoints``` directories, using the former to save test results and the latter to save model files.
+Subjective judgment can be made based on the test results in ```images``` to select an appropriate model for the following model inferring and video conversion steps.
 
 ### Infer Model
 
-训练后，可以使用自己的映像来测试模型。从```checkpionts```目录中选择您认为最好的模型文件，选择要测试的图像文件夹，然后运行```infer.py```进行测试。 
-如果使用预先训练的模型进行测试，则可以使用以下命令。
+After training, you can use your own image to test your model. Select the model file you think is best from the ```checkpoints``` directory and select the image folder that you want to test, then run ```infer.py``` to do inference.  
+If you use a pre-trained model for inference, you can use the following command.
 
 ```shell
-python infer.py --infer_dir ../dataset/test/real --infer_output ../dataset/output --ckpt_file_name ../checkpoints/animeganv2_generator_Hayao.ckpt
+python infer.py --infer_dir ../dataset/test/real --infer_output ../dataset/output --ckpt_file_name ../checkpoints/Hayao/netG_28.ckpt
 ```
 
 ### Video
 
-您还可以将MP4格式的横向视频转换为动漫风格，但不会保留视频的声音.
+You can also convert landscape videos in MP4 format to anime style, but the sound of the video will not be retained.
 
 ```shell
-python video2anime.py --video_input ../video/test.mp4 --video_output ../video/output.mp4 --video_ckpt_file_name ../checkpoints/Hayao/animeganv2_generator_Hayao.ckpt
+python video2anime.py --video_input ../video/test.mp4 --video_output ../video/output.mp4 --video_ckpt_file_name ../checkpoints/Hayao/netG_28.ckpt
 ```
+
+Demo Video Link: [https://www.bilibili.com/video/BV1Nd4y1u7e8/](https://www.bilibili.com/video/BV1Nd4y1u7e8/)
 
 ### Result
 
-以下是每种风格的单个风景图像的卡通化结果。
-
+The following is the cartoonization result of a single landscape image of each style.  
 ![image](./images/readme.jpg)
 
-举个例子.  
+The following is the output of each style of video.  
 Original  
-![Original](./images/test.gif 'Original')
+![Original](./images/Original.gif 'Original')
 
 Hayao  
+![Hayao](./images/Hayao.gif 'Hayao')
 
-![ouput](./images/ouput2.gif 'ouput')
-这里的GIF不知道为什么G了，但是在(./images/output.gif)中可以查看
+Paprika  
+![Paprika](./images/Paprika.gif 'Paprika')
 
-## reference
-
-1. animegan2-pytorch (https://github.com/bryandlee/animegan2-pytorch)
-2. animegan2 (https://github.com/TachibanaYoshino/AnimeGANv2)
+Shinkai  
+![Shinkai](./images/Shinkai.gif 'Shinkai')
