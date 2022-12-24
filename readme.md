@@ -217,4 +217,4 @@ Original
 ![Original](./images/test.gif 'Original')
 
 Hayao  
-![Hayao](./images/ouput.gif 'Hayao')
+![Hayao](./images/ouput2.gif 'Hayao')
