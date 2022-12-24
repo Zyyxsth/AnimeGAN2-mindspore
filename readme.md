@@ -8,6 +8,10 @@
 
 复现了AnimeGAN2的mindspore版本。
 
+### 原理解释
+
+曲木老师你们搞一下
+
 ## Pretrained model
 
 ### AnimeGANv2 Model trained by MindSpore
@@ -24,7 +28,7 @@ check_points
 ### Vgg19 model
 
 
-预训练的[vgg19]（https://download.mindspore.cn/vision/animeganv2/vgg.ckpt）模型用于特征提取和损失函数计算。请将此文件放在与此文件相同的目录中。 
+预训练的[vgg19]（https://download.mindspore.cn/vision/animeganv2/vgg.ckpt) 模型用于特征提取和损失函数计算。请将此文件放在与此文件相同的目录中。 
 
 ## Training Parameter description
 
@@ -213,9 +217,11 @@ Original
 ![Original](./images/test.gif 'Original')
 
 Hayao  
+
 ![ouput](./images/ouput2.gif 'ouput')
+这里的GIF不知道为什么G了，但是在(./images/output.gif)中可以查看
 
 ##reference
 
-1. animegan2-pytorch(https://github.com/bryandlee/animegan2-pytorch)
-2. animegan2(https://github.com/TachibanaYoshino/AnimeGANv2)
+1. animegan2-pytorch (https://github.com/bryandlee/animegan2-pytorch)
+2. animegan2 (https://github.com/TachibanaYoshino/AnimeGANv2)
