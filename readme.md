@@ -1,5 +1,11 @@
 # AnimeGANv2
 
+
+This is a rewrite by our group for the 2022 Computer Vision Final Assignment of the School of Intelligent Engineering of Sun Yat-sen University。
+
+writer---zhanguying tangshen qumu, enlong huangjing tianyun
+
+
 Anime is a common artistic form in our daily life. This artistic form is widely used in several fields including advertising, film and children’s education.
 Currently, the production of animation mainly relies on manual implementation. However, manually creating anime is very laborious and involves substantial artistic skills.
 For animation artists, creating high-quality anime works requires careful consideration of lines, textures, colors and shadows, which means that it is difficult and time-consuming to create the works.
@@ -10,11 +16,13 @@ AnimeGANv2 algorithm can rapidly transform real-world photos into high-quality a
 
 ### AnimeGANv2 Model trained by MindSpore
 
-| model                        | style   | ckpt                                                                                      |
-| :--------------------------- | :------ | :---------------------------------------------------------------------------------------- |
-| animeganv2_generator_Hayao   | Hayao   | [ckpt](https://download.mindspore.cn/vision/animeganv2/animeganv2_generator_Hayao.ckpt)   |
-| animeganv2_generator_Paprika | Paprika | [ckpt](https://download.mindspore.cn/vision/animeganv2/animeganv2_generator_Paprika.ckpt) |
-| animeganv2_generator_Shinkai | Shinkai | [ckpt](https://download.mindspore.cn/vision/animeganv2/animeganv2_generator_Shinkai.ckpt) |
+
+check_points  
+└──check_points
+       ├──animeganv2_generator_Hayao.ckpt
+       ├──animeganv2_generator_Paprika.ckpt
+       ├──animeganv2_generator_Shinkai.ckpt
+
 
 ### Vgg19 model
 
@@ -187,7 +195,7 @@ After training, you can use your own image to test your model. Select the model 
 If you use a pre-trained model for inference, you can use the following command.
 
 ```shell
-python infer.py --infer_dir ../dataset/test/real --infer_output ../dataset/output --ckpt_file_name ../checkpoints/Hayao/netG_28.ckpt
+python infer.py --infer_dir ../dataset/test/real --infer_output ../dataset/output --ckpt_file_name ../checkpoints/animeganv2_generator_Hayao.ckpt
 ```
 
 ### Video
@@ -195,10 +203,8 @@ python infer.py --infer_dir ../dataset/test/real --infer_output ../dataset/outpu
 You can also convert landscape videos in MP4 format to anime style, but the sound of the video will not be retained.
 
 ```shell
-python video2anime.py --video_input ../video/test.mp4 --video_output ../video/output.mp4 --video_ckpt_file_name ../checkpoints/Hayao/netG_28.ckpt
+python video2anime.py --video_input ../video/test.mp4 --video_output ../video/output.mp4 --video_ckpt_file_name ../checkpoints/Hayao/animeganv2_generator_Hayao.ckpt
 ```
-
-Demo Video Link: [https://www.bilibili.com/video/BV1Nd4y1u7e8/](https://www.bilibili.com/video/BV1Nd4y1u7e8/)
 
 ### Result
 
