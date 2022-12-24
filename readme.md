@@ -1,7 +1,7 @@
 # AnimeGANv2
 
 
-### This is a rewrite by our group for the 2022 Computer Vision Final Assignment of the School of Intelligent Engineering of Sun Yat-sen University。
+### This is a rewrite by our group for the 2022 Computer Vision Final Assignment of the School of Intelligent Engineering of Sun Yat-sen University。Mindspore's version of AnimeGAN2
 
 ### writer---zhangyuying tangshen qumu, enlong huangjing tianyun
 
