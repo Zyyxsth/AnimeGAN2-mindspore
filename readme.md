@@ -1,9 +1,9 @@
 # AnimeGANv2
 
 
-This is a rewrite by our group for the 2022 Computer Vision Final Assignment of the School of Intelligent Engineering of Sun Yat-sen University。
+###This is a rewrite by our group for the 2022 Computer Vision Final Assignment of the School of Intelligent Engineering of Sun Yat-sen University。
 
-writer---zhanguying tangshen qumu, enlong huangjing tianyun
+###writer---zhanguying tangshen qumu, enlong huangjing tianyun
 
 
 Anime is a common artistic form in our daily life. This artistic form is widely used in several fields including advertising, film and children’s education.
