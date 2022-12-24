@@ -209,7 +209,8 @@ python video2anime.py --video_input ../video/test.mp4 --video_output ../video/ou
 
 ### Result
 
-The following is the cartoonization result of a single landscape image of each style.  
+以下是每种风格的单个风景图像的卡通化结果。
+
 ![image](./images/readme.jpg)
 
 举个例子.  
