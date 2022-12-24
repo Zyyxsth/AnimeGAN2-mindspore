@@ -222,7 +222,7 @@ Hayao
 ![ouput](./images/ouput2.gif 'ouput')
 这里的GIF不知道为什么G了，但是在(./images/output.gif)中可以查看
 
-##reference
+## reference
 
 1. animegan2-pytorch (https://github.com/bryandlee/animegan2-pytorch)
 2. animegan2 (https://github.com/TachibanaYoshino/AnimeGANv2)
